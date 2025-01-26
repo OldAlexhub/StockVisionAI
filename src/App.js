@@ -38,12 +38,9 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${process.env.REACT_APP_FLASK_API}`,
-        {
-          stock: formData.stock,
-        }
-      );
+      const response = await axios.post(`${process.env.REACT_APP_FLASK_API}`, {
+        stock: formData.stock,
+      });
       if (response.status === 200) {
         setData(response.data);
         console.log(response.data);
@@ -440,47 +437,6 @@ const App = () => {
                   </div>
 
                   {/* News Section */}
-                  <div className="col-lg-12">
-                    <h2 className="mb-3">Latest News</h2>
-                    {Array.isArray(data.news) && data.news.length > 0 ? (
-                      data.news.map((newsItem, index) => (
-                        <div key={index} className="card mb-3">
-                          <div className="row g-0">
-                            <div className="col-md-4">
-                              <img
-                                src={
-                                  newsItem.thumbnail?.resolutions[0]?.url ||
-                                  "https://via.placeholder.com/200"
-                                }
-                                className="img-fluid rounded-start"
-                                alt={newsItem.title}
-                              />
-                            </div>
-                            <div className="col-md-8">
-                              <div className="card-body">
-                                <h5 className="card-title">{newsItem.title}</h5>
-                                <p className="card-text">
-                                  <small className="text-muted">
-                                    Publisher: {newsItem.publisher}
-                                  </small>
-                                </p>
-                                <a
-                                  href={newsItem.link}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="btn btn-link"
-                                >
-                                  Read more
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))
-                    ) : (
-                      <p>No news available.</p>
-                    )}
-                  </div>
                 </div>
               </>
             )}
