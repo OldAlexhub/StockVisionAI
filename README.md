@@ -78,4 +78,4 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ### Author
 
-Developed by [Mohamed Gad](https://github.com/OldAlexhub/StockVisionAI.git). Feel free to reach out for collaboration or feedback!
+Developed by [Mohamed Gad](https://github.com/OldAlexhub). Feel free to reach out for collaboration or feedback!
