@@ -39,7 +39,7 @@ const App = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_FLASK_API}/stocksearch`,
+        `${process.env.REACT_APP_FLASK_API}`,
         {
           stock: formData.stock,
         }
